@@ -7,3 +7,5 @@ class Task(models.Model):
     date_created = models.DateTimeField(auto_now_add=True)
     date_to_do = models.DateTimeField()
     author = models.ForeignKey(User, on_delete=models.CASCADE)
+
+#kom
