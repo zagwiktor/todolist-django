@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block css_style%}<link rel="stylesheet" href="{% static 'tasks/home.css' %}">{% endblock %}
+{% block title%}Home{% endblock %}
+{% block content %}
+<div class="background_box">
+    <span>Hello, {{request.user}} </span>
+    <span><a href="{% url 'logout' %"> Logout</a></span>
+</div>
+{% endblock %}

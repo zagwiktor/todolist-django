@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block css_style%}<link rel="stylesheet" href="{% static 'tasks/register.css' %}">{% endblock %}
+{% block title%}Register{% endblock %}
+{% block content%}
+<div class="background_box">
+    <div class="container">
+        <form method="POST">
+            {% csrf_token %}
+            <h2>Register</h2>
+            <div class="form-group">
+                <label>Username:</label>
+                {{form.username}}
+            </div>
+            <div class="form-group">
+                <label>Password:</label>
+                {{form.password1}}
+            </div>
+            <div class="form-group">
+                <label>Confirm password:</label>
+                {{form.password2}}
+            </div>
+            <button type="submit">Register</button>
+            {{form.errors}}
+        </form>
+        <div class="login_conteiner">
+            <p>Already have an account</p>
+            <a href="{%url 'login_page'%}">Login</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,52 @@
+.background_box {
+    background: #E3D5CA;
+    height:100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    margin: auto;
+    width: 50%;
+    padding: 20px;
+    background-color: #F5EBE0;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.5);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form h2 {
+    margin-top: 0;
+}
+
+button[type="submit"] {
+    background-color: #D5BDAF;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: black;
+}
+
+.register_conteiner {
+    align-items: center;
+    text-align: center;
+}
+
+.user_message {
+    text-align: center;
+}

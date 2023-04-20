@@ -1,0 +1,21 @@
+
+{% extends "base.html" %}
+{% load static %}
+
+{% block css_style%}<link rel="stylesheet" href="{% static 'tasks/tasks.css' %}">{% endblock %}
+{% block title%}Tasks Home{% endblock %}
+
+{% block content%}
+    <div class="background_box">
+        <div class="welcome_box">
+            <h1>Welcome</h1>
+            <h2>Plan your day with ToDoList</h2>
+            <form action="{% url 'login_page' %}">
+                <input class = 'login_button'  type="submit" value="Login" />
+            </form>
+            <form action="{% url 'register_page' %}">
+                <input class = 'register_button' type="submit" value="Register" />
+            </form>
+        </div>
+    </div>
+{% endblock %}
