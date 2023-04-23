@@ -2,10 +2,15 @@ from django.shortcuts import render
 
 # Create your views here.
 from django.shortcuts import render, redirect
+from django.urls import reverse_lazy
 from .forms import CreateNewUser
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
+from django.views.generic.list import ListView
+from django.views.generic.detail import DetailView
+from django.views.generic.edit import CreateView
+from .models import Task
 
 
 # Create your views here.
@@ -48,6 +53,23 @@ def register_page(request):
     return render(request, "tasks/register.html", context)
 
 
-@login_required(login_url='login')
-def home_page(request):
-    return render(request, "tasks/home.html")
+
+class HomePage(ListView):
+    model = Task
+    context_object_name = 'tasks'
+    template_name = 'tasks/home.html'
+
+
+class TaskDetails(DetailView):
+    model = Task
+    context_object_name = 'task'
+    template_name = 'tasks/task_details.html'
+
+
+class AddTask(CreateView):
+    model = Task
+    fields = '__all__'
+    template_name = 'tasks/add.html'
+    success_url = reverse_lazy('home_page')
+
+
