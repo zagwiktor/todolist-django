@@ -6,10 +6,9 @@ from django.urls import reverse_lazy
 from .forms import CreateNewUser
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
-from django.contrib.auth.decorators import login_required
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, DeleteView, UpdateView
 from .models import Task
 
 
@@ -59,6 +58,11 @@ class HomePage(ListView):
     context_object_name = 'tasks'
     template_name = 'tasks/home.html'
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['tasks'] = context['tasks'].filter(author=self.request.user)
+        context['count'] = context['tasks'].filter(completed=False)
+        return context
 
 class TaskDetails(DetailView):
     model = Task
@@ -72,4 +76,15 @@ class AddTask(CreateView):
     template_name = 'tasks/add.html'
     success_url = reverse_lazy('home_page')
 
+class UpdateTask(UpdateView):
+    model = Task
+    fields = '__all__'
+    template_name = 'tasks/update_task.html'
+    success_url = reverse_lazy('home_page')
+
+class DeleteTask(DeleteView):
+    model = Task
+    context_object_name = 'task'
+    template_name = 'tasks/delete_task.html'
+    success_url = reverse_lazy('home_page')
 
