@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import tasks_page, login_page, register_page, HomePage, logout_user, TaskDetails, AddTask
+from .views import tasks_page, login_page, register_page, HomePage, logout_user, TaskDetails, AddTask, UpdateTask, DeleteTask
 from django.contrib.auth.decorators import login_required
 
 urlpatterns = [
@@ -8,6 +8,8 @@ urlpatterns = [
     path('register/', register_page, name="register_page"),
     path('home/', login_required(HomePage.as_view()), name="home_page"),
     path('home/<int:pk>', login_required(TaskDetails.as_view()), name="task_details"),
-    path('home/addtask>', login_required(AddTask.as_view()), name="add_task"),
+    path('home/addtask/', login_required(AddTask.as_view()), name="add_task"),
+    path('home/edittask/<int:pk>', login_required(UpdateTask.as_view()), name="update_task"),
+    path('home/delitetask/<int:pk>', login_required(DeleteTask.as_view()), name="delete_task"),
     path('logout/', logout_user, name="logout"),
 ]
