@@ -6,20 +6,36 @@ Users can create an account and then add, update, and delete their tasks. They a
 
 In order to run the project on your local machine, you must follow these steps:
 
-1. Install Python  
-[Python](https://www.python.org/downloads/)
-2. Install IDE (for example, PyCharm) 
-3. Install Django by typing the following command in your terminal:
+Install Python version 3.11
+   ([Python](https://www.python.org/downloads/))
+
+Then
+
+If you already have installed IDE, which support python you can skip this step, but if not install IDE (for example, PyCharm) 
+
+Then
+
+Clone the repository 
+
+Then
+
+To install all necessary libraries in the project terminal, type in:
 ```bash
-python -m pip install Django
+pip install -r requirements.txt
 ```
-4. Clone the repository 
-5. I strongly recommend using a virtual environment. You can create one by typing the following command: 
+
+Then
+
+I strongly recommend using a specific virtual environment for this project. You can create one by typing the following command: 
 ```bash
 python -m venv <name-of-your-enviroment> 
 ```
-6. Include the enviroment to your project.
-7. If you have completed all the steps, you can run the project by typing the following command into your terminal:
+
+And add them by accessing the interpreter settings and selecting the file from the folder where we created our virtual environment (name-of-your-environment -> Scripts -> python.exe).
+
+Then
+
+If you have completed all the steps, you can run the project by typing the following command into your terminal:
 ```bash
 python manage.py runserver 
 ```
