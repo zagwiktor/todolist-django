@@ -1,0 +1,26 @@
+[
+    {
+        "model": "tasks.task",
+        "pk": 1,
+        "fields": {
+            "title": "Test task 1",
+            "description": "Exemplary description of first task",
+            "date_created": "2023-05-19T00:00:00Z",
+            "completed": false,
+            "date_to_do": "2050-05-20T00:00:00Z",
+            "author": 1
+        }
+    },
+    {
+        "model": "tasks.task",
+        "pk": 2,
+        "fields": {
+            "title": "Test task 2",
+            "description": "Exemplary description of second task",
+            "date_created": "2023-05-19T01:00:00Z",
+            "completed": false,
+            "date_to_do": "2050-05-21T00:00:00Z",
+            "author": 1
+        }
+    }
+]

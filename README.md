@@ -21,7 +21,10 @@ In order to run the project on your local machine, you must follow these steps:
 ```bash
 pip install -r requirements.txt
 ```
-
+* Also you can provide initial data by type in:
+```bash
+python manage.py loaddata task.json
+```
 
 
 4. I strongly recommend using a specific virtual environment for this project. You can create one by typing the following command: 
