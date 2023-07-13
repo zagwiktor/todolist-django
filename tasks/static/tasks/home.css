@@ -1,7 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Ysabeau+Infant:wght@200&display=swap');
+
 .background_box {
     background: #E3D5CA;
     height:100vh;
     display: flex;
     align-items: center;
     justify-content: center;
+    font-family: 'Nanum Gothic', sans-serif;
 }
+
+.tasks-table {
+    background: #E3D5CA;
+    border-style: inset;
+}
+
+span {
+    font-family: 'Nanum Gothic', sans-serif;
+}
+

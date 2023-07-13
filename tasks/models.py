@@ -6,8 +6,8 @@ class Task(models.Model):
     description = models.TextField(max_length=100, null=True, blank=True)
     date_created = models.DateTimeField(auto_now_add=True)
     completed = models.BooleanField(default=False)
-    date_to_do = models.DateTimeField()
-    author = models.ForeignKey(User, on_delete=models.CASCADE)
+    date_to_do = models.DateTimeField(null=True, blank=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
 
     def __str__(self):
         return self.title
