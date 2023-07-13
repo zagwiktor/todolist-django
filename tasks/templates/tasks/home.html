@@ -17,24 +17,28 @@
         </div>
     </nav>
     <div class="background_box">
-
-        <table>
-            <tr>
-                <th>Your's tasks</th>
-                <th></th>
-                <th></th>
-            </tr>
-            {% for task in tasks %}
-            <tr>
-                <td>{{task.title}}</td>
-                <td><a href="{% url 'task_details' task.id %}">  Details</a></td>
-                <td><a href="{% url 'update_task' task.id %}"> Update</a></td>
-                <td><a href="{% url 'delete_task' task.id %}"> Delete</a></td>
-            </tr>
-            {% empty %}
-                <h3>No have not added any task yet</h3>
-            {% endfor %}
-        </table>
-
+        <div class="tasks-table">
+            <table>
+                <form method="GET">
+                <input type="text" name="search-area" value="{{search_input}}">
+                <input type="submit" value="Search">
+                </form>
+                <tr>
+                    <th>Your's tasks</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+                {% for task in tasks %}
+                <tr>
+                    <td>{{task.title}}</td>
+                    <td><a href="{% url 'task_details' task.id %}">  Details</a></td>
+                    <td><a href="{% url 'update_task' task.id %}"> Update</a></td>
+                    <td><a href="{% url 'delete_task' task.id %}"> Delete</a></td>
+                </tr>
+                {% empty %}
+                    <h3>No have not added any task yet</h3>
+                {% endfor %}
+            </table>
+        </div>
     </div>
 {% endblock %}
