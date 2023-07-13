@@ -1,9 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap');
-
-html {
-    font-family: 'Comfortaa', cursive;
-}
-
 body {
     margin: 0;
+    font-family: 'Nanum Gothic', sans-serif;
 }

@@ -58,11 +58,21 @@ class HomePage(ListView):
     context_object_name = 'tasks'
     template_name = 'tasks/home.html'
 
-    def get_context_data(self, **kwargs):
+
+    def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['tasks'] = context['tasks'].filter(author=self.request.user)
-        context['count'] = context['tasks'].filter(completed=False)
+        context['tasks'] = context['tasks'].filter(user=self.request.user)
+        context['count'] = context['tasks'].filter(completed=False).count()
+
+        search_input = self.request.GET.get('search-area') or ''
+        if search_input:
+            context['tasks'] = context['tasks'].filter(title__startswith=search_input)
+
+        context['search_input'] = search_input
         return context
+
+
+
 
 class TaskDetails(DetailView):
     model = Task
@@ -72,9 +82,13 @@ class TaskDetails(DetailView):
 
 class AddTask(CreateView):
     model = Task
-    fields = '__all__'
+    fields = ['title', 'description', 'date_to_do']
     template_name = 'tasks/add.html'
     success_url = reverse_lazy('home_page')
+
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super(AddTask, self).form_valid(form)
 
 class UpdateTask(UpdateView):
     model = Task
