@@ -5,8 +5,9 @@
 {% block css_style%}<link rel="stylesheet" href="{% static 'tasks/tasks.css' %}">{% endblock %}
 {% block title%}Tasks Home{% endblock %}
 
+{% block navbar%}{% endblock %}
 {% block content%}
-    <div class="background_box">
+
         <div class="welcome_box">
             <h1>Welcome</h1>
             <h2>Plan your day with ToDoList</h2>
@@ -17,5 +18,5 @@
                 <input class = 'register_button' type="submit" value="Register" />
             </form>
         </div>
-    </div>
+
 {% endblock %}

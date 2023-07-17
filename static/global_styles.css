@@ -1,4 +1,21 @@
 body {
     margin: 0;
     font-family: 'Nanum Gothic', sans-serif;
+    background-color: blue;
+}
+
+.container {
+    max-width: 550px;
+    margin: auto;
+    background: #E1ECC8;
+    box-shadow: 8px 8px 24px 16px #C4D7B2;
+    border-radius:10px;
+}
+
+.background-box {
+    background: #F7FFE5;
+    height:100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

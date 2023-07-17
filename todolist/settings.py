@@ -121,6 +121,7 @@ LOGIN_URL = 'login_page'
 
 STATIC_URL = 'static/'
 
+
 STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
