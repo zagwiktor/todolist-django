@@ -1,20 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Ysabeau+Infant:wght@200&display=swap');
-.background_box {
-    background: #F7FFE5;
-    height:100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+
 
 .welcome_box {
     background: #E1ECC8;
-    width: 20%;
     height: auto;
     text-align: center;
+    padding: 25px 50px 25px 50px;
     box-shadow: 8px 8px 24px 16px #C4D7B2;
     border-radius:10px;
-    margin: 10px;
 }
 
 input[type=submit] {

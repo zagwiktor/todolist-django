@@ -8,15 +8,7 @@
 
 {% block title%}Home{% endblock %}
 {% block content %}
-    <nav class="navbar navbar-dark bg-secondary">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="{% url 'home_page' %}">ToDoList</a>
-            <span style="color: white">Hello, {{request.user}} </span>
-            <span ><a style="color: white" href="{% url 'add_task' %}"> Add Task</a></span>
-            <span ><a style="color: white" href="{% url 'logout' %}"> Logout</a></span>
-        </div>
-    </nav>
-    <div class="background_box">
+
 
         <form method="POST">
             {% csrf_token %}
@@ -24,5 +16,5 @@
             <input type="submit" value="Delete">
         </form>
 
-    </div>
+
 {% endblock %}
