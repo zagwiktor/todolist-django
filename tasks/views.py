@@ -71,9 +71,6 @@ class HomePage(ListView):
         context['search_input'] = search_input
         return context
 
-
-
-
 class TaskDetails(DetailView):
     model = Task
     context_object_name = 'task'
@@ -82,7 +79,7 @@ class TaskDetails(DetailView):
 
 class AddTask(CreateView):
     model = Task
-    fields = ['title', 'description', 'date_to_do']
+    fields = ['title', 'description', 'completed']
     template_name = 'tasks/add.html'
     success_url = reverse_lazy('home_page')
 

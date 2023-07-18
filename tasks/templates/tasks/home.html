@@ -11,7 +11,13 @@
     <div class="task-header">
         <h3>To Do List</h3>
         <h4>You have <i>{{count}}</i> incomplete task{{ count|pluralize:"s" }}</h4>
-        <hr>
+
+        <div class="search-bar">
+            <form method="GET">
+                <input type="text" name="search-area" value="{{search_input}}">
+                <input type="submit" value="Search">
+            </form>
+        </div>
     </div>
 
 
@@ -23,16 +29,20 @@
                     <div class="task-complete-icon"></div>
                     <i><s><a href="{% url 'update_task' task.id %}">{{task}}</a></s></i>
                 </div>
+                <a class="delete-option" href="{% url 'delete_task' task.id%}">&#10006;</a>
 
             {% else %}
                 <div class="task-title">
                     <div class="task-complete-icon"></div>
                     <a href="{% url 'update_task' task.id %}">{{task}}</a>
                 </div>
+                <a class="delete-option" href="{% url 'delete_task' task.id%}">&#10006;</a>
+
             {% endif %}
+
         </div>
     {% empty %}
-        <h3>You dose not have any task added yet</h3>
+        <h3>No tasks</h3>
     {% endfor %}
     </div>
 {% endblock %}

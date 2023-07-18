@@ -5,7 +5,45 @@
 .task-header {
         justify-content: space-between;
         padding: 10px;
+        border-bottom: 1px solid rgb(82, 109, 130);
 }
 
+.task-wrapper {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgb(82, 109, 130);
+}
 
+input[type="submit"] {
+    width: 100px;
+    padding: 10px 0px 10px 5px;
+    font-family: 'Nanum Gothic', sans-serif;
+    border-radius:10px;
+    background-color: #F7FFE5;
+    font-size: 15px;
+}
 
+.task-title {
+    display: flex;
+}
+
+.delete-option {
+    line-height: 0;
+    text-decoration: none;
+}
+
+input {
+    padding: 0.25em 0.5em;
+    background-color: #F7FFE5;
+    border-radius: 4px;
+    resize: vertical;
+    font-size: 20px;
+    width: 30%;
+    text-align: center;
+}
+
+.task-header hr {
+    border-top: 1px solid rgb(82, 109, 130);
+}

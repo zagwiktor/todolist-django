@@ -5,3 +5,12 @@
     align-items: center;
     justify-content: center;
 }
+
+input[type="submit"] {
+    width: 100px;
+    padding: 10px 0px 10px 5px;
+    font-family: 'Nanum Gothic', sans-serif;
+    border-radius:10px;
+    background-color: #F7FFE5;
+    font-size: 15px;
+}
