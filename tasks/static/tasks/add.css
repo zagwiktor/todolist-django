@@ -7,17 +7,22 @@ input[type="submit"] {
     font-size: 15px;
 }
 
+
 input[type=text], textarea{
     padding: 0.25em 0.5em;
     background-color: #F7FFE5;
     border-radius: 4px;
     resize: vertical;
     font-size: 20px;
-    width: 30%;
-    text-align: center;
+    width: 50%;
+    display: block;
+
 }
 
 label {
     padding-top: 10px !important;
     display: block;
 }
+
+
+

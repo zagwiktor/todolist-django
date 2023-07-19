@@ -1,7 +1,26 @@
-.background_box {
-    background: #E3D5CA;
-    height:100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+input[type="submit"] {
+    width: 100px;
+    padding: 10px 0px 10px 5px;
+    font-family: 'Nanum Gothic', sans-serif;
+    border-radius:10px;
+    background-color: #F7FFE5;
+    font-size: 15px;
 }
+
+
+input[type=text], textarea{
+    padding: 0.25em 0.5em;
+    background-color: #F7FFE5;
+    border-radius: 4px;
+    resize: vertical;
+    font-size: 20px;
+    width: 50%;
+    display: block;
+
+}
+
+label {
+    padding-top: 10px !important;
+    display: block;
+}
+

@@ -79,7 +79,7 @@ class TaskDetails(DetailView):
 
 class AddTask(CreateView):
     model = Task
-    fields = ['title', 'description', 'completed']
+    fields = ['title', 'description']
     template_name = 'tasks/add.html'
     success_url = reverse_lazy('home_page')
 
@@ -89,7 +89,7 @@ class AddTask(CreateView):
 
 class UpdateTask(UpdateView):
     model = Task
-    fields = '__all__'
+    fields = ['title', 'description', 'completed']
     template_name = 'tasks/update_task.html'
     success_url = reverse_lazy('home_page')
 
