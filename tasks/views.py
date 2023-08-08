@@ -58,7 +58,6 @@ class HomePage(ListView):
     context_object_name = 'tasks'
     template_name = 'tasks/home.html'
 
-
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data(**kwargs)
         context['tasks'] = context['tasks'].filter(user=self.request.user)
